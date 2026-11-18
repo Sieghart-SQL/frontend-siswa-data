@@ -1,16 +1,67 @@
-# React + Vite
+# Frontend Data Siswa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi web **React (Vite)** untuk menampilkan, menambah, mengedit, dan menghapus Data Siswa. Semua operasi memanggil API dari repo backend.
 
-Currently, two official plugins are available:
+## Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Menampilkan daftar siswa
+- Menambah data siswa
+- Mengedit data siswa
+- Menghapus data siswa (dengan konfirmasi)
+- Pesan sukses dan error dari server
 
-## React Compiler
+## Teknologi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Fetch API
 
-## Expanding the ESLint configuration
+## Prasyarat
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend harus sudah berjalan lebih dulu: https://github.com/Sieghart-SQL/backend-siswa-data
+
+## Instalasi
+
+```bash
+git clone https://github.com/Sieghart-SQL/frontend-siswa-data.git
+cd frontend-siswa-data
+npm install
+```
+
+Buat file `.env` di root project:
+
+```env
+VITE_API_URL=http://localhost:3001/api/siswa
+```
+
+## Menjalankan
+
+```bash
+npm run dev
+```
+
+Buka alamat yang muncul di terminal, biasanya `http://localhost:5173`.
+
+## Urutan menjalankan seluruh aplikasi
+
+1. Nyalakan MySQL (Laragon/XAMPP)
+2. Jalankan backend: `npm start`
+3. Jalankan frontend: `npm run dev`
+
+## Struktur utama
+
+```
+src/
+├── components/
+│   ├── Pesan.jsx       # Kotak pesan error dan sukses
+│   ├── FormSiswa.jsx   # Form tambah dan edit siswa
+│   └── TabelSiswa.jsx  # Tabel daftar siswa
+├── App.jsx             # State dan pemanggilan API
+├── App.css             # Styling halaman
+├── index.css           # Styling global
+└── main.jsx            # Entry point React
+```
+
+## Field Data Siswa
+
+Kode Siswa, Nama Siswa, Alamat Siswa, Tgl Siswa, dan Jurusan Siswa.
